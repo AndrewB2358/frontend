@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import logo from './logo.svg'; //dont think i Need logo, maybe need css
+import { Switch, Route, Link, Routes, BrowserRouter } from "react-router-dom";
+import React from "react";
 import './App.css';
+
+import AddUser from "./components/add-User"
+import EditUser from "./components/edit-User"
+import UserList from "./components/user-list"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <button>Add User</button>
+     <p component={UserList}>
+       Here are Useres{UserList()} 
+     </p>
+     {/*
+     <a href="/users"/>
+     <li>
+       <Link to={"/users"}>
+         users
+       </Link>
+     </li>
+     <Routes>
+     <BrowserRouter>
+     <Route exact path={["/","/users"]} component={UserList}/>
+     </BrowserRouter>
+     </Routes>
+     */}
+     
     </div>
   );
 }
